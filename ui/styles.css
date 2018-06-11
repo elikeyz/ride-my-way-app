@@ -14,13 +14,27 @@ body {
     color: rgb(165, 42, 42);
 }
 
+a {
+    color: rgb(165, 42, 42);
+    text-decoration-line: none;
+}
+
+a:hover {
+    text-decoration-line: underline;
+}
+
 .form {
     text-align: left;
     margin: 10px 600px 10px;
     color: rgb(165, 42, 42);
+    min-width: 15%;
 }
 
-#login {
+.form-unit {
+    padding-bottom: 10px;
+}
+
+.submit {
     width: 100%;
     background-color: rgb(165, 42, 42);
     height: 30px;
