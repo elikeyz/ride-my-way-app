@@ -44,3 +44,21 @@ a:hover {
     color: white;
     margin-top: 30px;
 }
+
+.header {
+    display: flex;
+    background-color: rgb(165, 42, 42);
+    color: white;
+}
+
+.sub-header {
+    min-width: 25%;
+}
+
+table {
+    min-width: 100%;
+}
+
+thead {
+    background-color: rgb(199, 196, 196);
+}
