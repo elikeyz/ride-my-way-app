@@ -14,13 +14,19 @@ body {
     color: rgb(165, 42, 42);
 }
 
-a {
+.link-one {
     color: rgb(165, 42, 42);
+    text-decoration-line: none;
+}
+
+.link-two {
+    color: white;
     text-decoration-line: none;
 }
 
 a:hover {
     text-decoration-line: underline;
+    cursor: pointer;
 }
 
 .form {
@@ -43,6 +49,11 @@ a:hover {
     border-radius: 10px;
     color: white;
     margin-top: 30px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    color: rgb(199, 196, 196);
 }
 
 .header {
