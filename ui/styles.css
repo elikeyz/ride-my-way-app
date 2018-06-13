@@ -66,10 +66,28 @@ a:hover {
     min-width: 25%;
 }
 
+.active {
+    background-color: rgb(199, 196, 196);
+    color: rgb(165, 42, 42);
+}
+
 table {
     min-width: 100%;
 }
 
 thead {
+    background-color: rgb(199, 196, 196);
+}
+
+.profile {
+    display: flex;
+}
+
+.main-column {
+    min-width: 80%;
+}
+
+.side-column {
+    min-width: 20%;
     background-color: rgb(199, 196, 196);
 }
