@@ -8,6 +8,16 @@ body {
     background-color: rgb(165, 42, 42);
     color: white;
     padding: 10px;
+    display: flex;
+}
+
+.name-tag {
+    display: block;
+}
+
+.links {
+    text-align: right;
+    padding-left: 800px;
 }
 
 .main {
@@ -23,10 +33,11 @@ body {
 .link-two {
     color: white;
     text-decoration-line: none;
+    padding-left: 50px;
 }
 
 a:hover {
-    text-decoration-line: underline;
+    text-decoration-line: none;
     cursor: pointer;
 }
 
