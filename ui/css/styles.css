@@ -1,7 +1,15 @@
 body {
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0px;
+    background-image: url("../images/background.jpeg");
+}
+
+h1, h2, h3, h4, h5, h6, thead {
+    font-family: 'Titan One', cursive;
+}
+
+p, tr {
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 .title-bar {
@@ -21,7 +29,7 @@ body {
 }
 
 .main {
-    color: rgb(165, 42, 42);
+    color: white;
     min-width: 60%;
 }
 
@@ -98,6 +106,7 @@ input {
 
 table {
     min-width: 100%;
+    background-color: white;
 }
 
 thead, tr:nth-child(even) {
