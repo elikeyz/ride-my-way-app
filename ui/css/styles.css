@@ -1,7 +1,12 @@
+html {
+    height:100%;
+}
+
 body {
     text-align: center;
     margin: 0px;
     background-image: url("../images/background.jpeg");
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, thead {
@@ -10,6 +15,7 @@ h1, h2, h3, h4, h5, h6, thead {
 
 p, tr {
     font-family: 'Encode Sans Semi Expanded', sans-serif;
+    margin: 2px;
 }
 
 .title-bar {
@@ -20,17 +26,28 @@ p, tr {
 }
 
 .name-tag {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: flex-start;
 }
 
 .links {
     text-align: right;
-    padding-left: 800px;
+    width: 30%;
+    display: flex;
+    align-content: flex-end;
+    margin-top: 10px;
 }
 
 .main {
     color: white;
     min-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 100%;
 }
 
 .link-one {
@@ -49,13 +66,27 @@ a:hover {
     cursor: pointer;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
 .form {
     text-align: left;
-    margin: 50px 550px 10px;
     color: rgb(165, 42, 42);
-    min-width: 15%;
     background-color: rgb(199, 196, 196);
     padding: 20px 50px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 30%;
+    justify-content: center;
+}
+
+.form-unit {
+    margin: 20px 0px;
 }
 
 .submit {
@@ -79,7 +110,7 @@ a:hover {
 
 input {
     width: 100%;
-    height: 20px;
+    height: 30px;
     border-radius: 10px;
     padding: 0px 10px 0px;
 }
@@ -121,13 +152,6 @@ thead, tr:nth-child(even) {
     display: flex;
 }
 
-.main-column {
-    min-width: 80%;
-    margin-top: 50px;
-}
-
 .side-column {
-    min-width: 20%;
     background-color: rgb(199, 196, 196);
-    margin: 50px 0px 50px 100px;
 }
