@@ -68,7 +68,7 @@ a:hover {
 }
 
 .action {
-    width: 30%;
+    width: 40%;
     margin-top: 10px;
 }
 
@@ -105,8 +105,12 @@ input {
 }
 
 table {
-    min-width: 100%;
+    min-width: 80%;
     background-color: white;
+}
+
+.rides {
+    margin: 50px 130px 50px;
 }
 
 thead, tr:nth-child(even) {
@@ -119,9 +123,11 @@ thead, tr:nth-child(even) {
 
 .main-column {
     min-width: 80%;
+    margin-top: 50px;
 }
 
 .side-column {
     min-width: 20%;
     background-color: rgb(199, 196, 196);
+    margin: 50px 0px 50px 100px;
 }
