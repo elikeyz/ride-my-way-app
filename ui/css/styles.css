@@ -70,6 +70,12 @@ p, tr {
     text-decoration-line: none;
 }
 
+.link-four {
+    color: white;
+    text-decoration-line: none;
+}
+
+
 a:hover {
     text-decoration-line: none;
     cursor: pointer;
@@ -78,6 +84,7 @@ a:hover {
 .container {
     display: flex;
     justify-content: center;
+    align-content: center;
     margin: 50px 0px;
     width: 100%;
 }
@@ -153,19 +160,81 @@ table {
     background-color: white;
 }
 
-.rides {
-    margin: 50px 130px 50px;
-}
-
 thead, tr:nth-child(even) {
     background-color: rgb(199, 196, 196);
 }
 
 .profile {
     display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.profile-container {
+    display: flex;
 }
 
 .side-column {
     background-color: rgb(199, 196, 196);
     padding: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .request {
+        height: 50px;
+    }
+
+    .action {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .title-bar {
+        height: 150px;
+    }
+
+    .name-tag {
+        width: 40%;
+    }
+
+    .links {
+        width: 60%;
+    }
+
+    .link-three {
+        width: 50%;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .profile {
+        margin-top: 50px;
+    }
+
+    .main-column {
+        width: 100%;
+    }
+
+    .side-column {
+        width: 90%;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
 }
