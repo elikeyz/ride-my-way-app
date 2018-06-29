@@ -41,6 +41,10 @@ p, tr {
     padding-right: 10px;
 }
 
+.index-links {
+    padding: 20px;
+}
+
 .main {
     color: white;
     min-width: 60%;
@@ -52,14 +56,18 @@ p, tr {
 }
 
 .link-one {
-    color: rgb(165, 42, 42);
     text-decoration-line: none;
 }
 
 .link-two {
     color: white;
     text-decoration-line: none;
-    padding-left: 50px;
+    width: 20%;
+}
+
+.link-three {
+    color: white;
+    text-decoration-line: none;
 }
 
 a:hover {
@@ -93,10 +101,11 @@ a:hover {
 .submit {
     width: 100%;
     background-color: rgb(165, 42, 42);
-    height: 30px;
+    height: 40px;
     border-radius: 10px;
     color: white;
     margin-top: 30px;
+    font-size: large;
 }
 
 .action {
@@ -132,11 +141,11 @@ input {
 .active {
     background-color: rgb(199, 196, 196);
     color: rgb(165, 42, 42);
-    padding-top: 18px;
+    width: 20%;
 }
 
 .sub-header {
-    width: 20%;
+    padding-top: 20px;
 }
 
 table {
@@ -158,4 +167,5 @@ thead, tr:nth-child(even) {
 
 .side-column {
     background-color: rgb(199, 196, 196);
+    padding: 20px;
 }
