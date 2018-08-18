@@ -10,45 +10,49 @@
     <title>Sign Up on Ride My Way</title>
 </head>
 <body>
-    <div class="title-bar">
-        <div class="title-bar name-tag">
-            <a class="link-four" href="index.html"><h1>RIDE MY WAY</h1></a>
+    <div class="bgImg">
+        <div class="overlay">
+                <div class="title-bar">
+                        <div class="title-bar name-tag">
+                            <a class="link-four" href="index.html"><h1>RIDE MY WAY</h1></a>
+                        </div>
+                        <div class="title-bar links">
+                            <a class="link-three" href="login.html"><p class="index-links">LOGIN</p></a>
+                            <p class="index-links">SIGN UP</p>
+                        </div>
+                    </div>
+                    <div class="form-container">
+                        <form class="form" action="rides.html">
+                            <div class="form-unit">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" placeholder="First Name" required>
+                            </div>
+                            <div class="form-unit">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-unit">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-unit">
+                                <label for="username-signup">Username</label>
+                                <input type="text" id="username-signup" placeholder="Username" required>
+                            </div>
+                            <div class="form-unit">
+                                <label for="password-signup">Password</label>
+                                <input type="password" id="password-signup" placeholder="Password" required>
+                            </div>
+                            <div class="form-unit">
+                                <label for="password-confirm-signup">Confirm Password</label>
+                                <input type="password" id="password-confirm-signup" placeholder="Confirm Password" required>
+                            </div>
+                            <div class="form-unit">
+                                <input type="submit" id="signup" class="submit" value="Sign Up">
+                            </div>
+                        </form>
+                    </div>
         </div>
-        <div class="title-bar links">
-            <a class="link-three" href="login.html"><p class="index-links">LOGIN</p></a>
-            <p class="index-links">SIGN UP</p>
-        </div>
-    </div>
-    <div class="form-container">
-        <div class="form">
-            <div class="form-unit">
-                <p>First Name</p>
-                <input type="text" id="first-name" required>
-            </div>
-            <div class="form-unit">
-                <p>Last Name</p>
-                <input type="text" id="last-name" required>
-            </div>
-            <div class="form-unit">
-                <p>Email</p>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-unit">
-                <p>Username</p>
-                <input type="text" id="username-signup" required>
-            </div>
-            <div class="form-unit">
-                <p>Password</p>
-                <input type="password" id="password-signup" required>
-            </div>
-            <div class="form-unit">
-                <p>Confirm Password</p>
-                <input type="password" id="password-confirm-signup" required>
-            </div>
-            <div class="form-unit">
-                <a href="rides.html"><button id="signup" class="submit">Sign Up</button></a>
-            </div>
-        </div>
-    </div>
+    </div>    
 </body>
 </html>

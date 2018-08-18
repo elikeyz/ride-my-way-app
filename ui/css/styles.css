@@ -5,13 +5,18 @@ html {
 body {
     text-align: center;
     margin: 0px;
-    background-image: url("../images/background.jpeg");
+    background-color: rgb(235, 232, 232);
     height: 100%;
+}
+
+.bgImg {
+    background-image: url("../images/background2.jpg");
+    min-height: 100%;
 }
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.4);
-    height: 100%;
+    min-height: 662px;
 }
 
 h1, h2, h3, h4, h5, h6, thead {
@@ -96,10 +101,13 @@ a:hover {
 .ride {
     width: 25%;
     margin: 0% 2%;
+    color: rgb(165, 42, 42);
+    border-radius: 5px;
 }
 
 .ride-header {
-    background-color: rgb(199, 196, 196);
+    background-color: rgb(165, 42, 42);
+    color: white;
     margin: 0px;
     padding-bottom: 1px;
 }
@@ -108,6 +116,7 @@ a:hover {
     background-color: white;
     margin: 0px;
     padding-bottom: 5px;
+    box-shadow: 1px 1px 25px 0px rgba(0,0,0,.3);
 }
 
 .form-container {
@@ -119,11 +128,13 @@ a:hover {
 .form {
     text-align: left;
     color: rgb(165, 42, 42);
-    background-color: rgb(199, 196, 196);
     padding: 20px 50px 30px 30px;
     display: flex;
     flex-direction: column;
     width: 30%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 25px 0px rgba(0,0,0,.3);
+    background-color: rgb(235, 232, 232);
 }
 
 .form-unit {
