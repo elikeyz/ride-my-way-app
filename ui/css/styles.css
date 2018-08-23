@@ -10,7 +10,7 @@ body {
 }
 
 .bgImg {
-    background-image: url("../images/background2.jpg");
+    background-image: url("../images/background.jpg");
     min-height: 100%;
 }
 
@@ -26,6 +26,13 @@ h1, h2, h3, h4, h5, h6, thead {
 p, tr {
     font-family: 'Encode Sans Semi Expanded', sans-serif;
     margin: 2px;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
 }
 
 .title-bar {
@@ -62,7 +69,7 @@ p, tr {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    height: 83%;
+    height: 582px;
 }
 
 .link-one {
@@ -95,7 +102,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 5% 10%;
+    margin: 130px 10%;
 }
 
 .ride {
@@ -122,7 +129,7 @@ a:hover {
 .form-container {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 130px;
 }
 
 .form {
@@ -134,7 +141,7 @@ a:hover {
     width: 30%;
     border-radius: 5px;
     box-shadow: 1px 1px 25px 0px rgba(0,0,0,.3);
-    background-color: rgb(235, 232, 232);
+    background-color: rgba(235, 232, 232, .5);
 }
 
 .form-unit {
@@ -204,7 +211,7 @@ thead, tr:nth-child(even) {
 .profile {
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 130px;
     flex-direction: column;
 }
 
@@ -215,11 +222,12 @@ thead, tr:nth-child(even) {
 }
 
 .side-column {
-    background-color: rgb(199, 196, 196);
+    background-color: rgba(199, 196, 196, .5);
     padding: 20px;
     display: flex;
-    width: 70%;
+    width: 80%;
     align-self: center;
+    box-shadow: 1px 1px 25px 0px rgba(0,0,0,.3);
 }
 
 .avatar {
