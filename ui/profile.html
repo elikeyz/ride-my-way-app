@@ -10,28 +10,42 @@
     <title>My Profile</title>
 </head>
 <body>
-    <nav class="header">
-        <a class="link-two" href="rides.html"><div class="sub-header">
-            <p>Available Rides</p>
-        </div></a>
-        <a class="link-two" href="offer-ride.html"><div class="sub-header">
-            <p>Offer A Ride</p>
-        </div></a>
-        <div class="active sub-header">
-            <p>My Profile</p>
-        </div>
-        <a class="link-two" href="requests.html"><div class="sub-header">
-            <p>Ride Requests</p>
-        </div></a>
-        <a class="link-two" href="index.html"><div class="sub-header">
-            <p>Logout</p>
-        </div></a>
-    </nav>
+    <nav>
+            <div class="mobile title-bar">
+                    <div class="title-bar name-tag">
+                        <h1>RIDE MY WAY</h1>
+                    </div>
+                    <div class="menu-icon-container">
+                        <div id="menu-icon">
+                            <div class="menu-icon-bar"></div>
+                            <div class="menu-icon-bar"></div>
+                            <div class="menu-icon-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header">
+                        <a class="link-two" href="rides.html"><div class="sub-header">
+                            <p>Available Rides</p>
+                        </div></a>
+                        <a class="link-two" href="offer-ride.html"><div class="sub-header">
+                            <p>Offer A Ride</p>
+                        </div></a>
+                        <div class="active sub-header">
+                            <p>My Profile</p>
+                        </div>
+                        <a class="link-two" href="requests.html"><div class="sub-header">
+                            <p>Ride Requests</p>
+                        </div></a>
+                        <a class="link-two" href="index.html"><div class="sub-header">
+                            <p>Logout</p>
+                        </div></a>
+                    </div>
+    </nav>    
     <div class="profile">
         <div class="profile-container">
             <div class="side-column">
                 <div class="avatar">
-                    <image src="images/avatar.jpg" height="240" width="240"></image>
+                    <img src="images/avatar.jpg" height="240" width="240">
                 </div>
                 <div class="user-info">
                     <h3>John Doe</h3>
@@ -84,5 +98,6 @@
             </div>
         </div>
     </div>
+    <script src="js/nav.js"></script>
 </body>
 </html>

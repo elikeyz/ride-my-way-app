@@ -239,6 +239,26 @@ thead, tr:nth-child(even) {
     color: rgb(165, 42, 42);
 }
 
+.menu-icon-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    justify-content: center;
+}
+
+.menu-icon-bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+.mobile {
+    display: none;
+}
+
 @media only screen and (max-width: 1200px) {
     .request {
         height: 50px;
@@ -253,7 +273,7 @@ thead, tr:nth-child(even) {
 
 @media only screen and (max-width: 600px) {
     .title-bar {
-        height: 150px;
+        height: 100px;
     }
 
     .name-tag {
@@ -264,16 +284,8 @@ thead, tr:nth-child(even) {
         width: 60%;
     }
 
-    .link-three {
-        width: 50%;
-    }
-
     .form {
-        width: 100%;
-    }
-
-    .profile {
-        margin-top: 50px;
+        width: 70%;
     }
 
     .main-column {
@@ -286,7 +298,7 @@ thead, tr:nth-child(even) {
 
     .profile-container {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
     }
 
     .ride {
@@ -304,6 +316,7 @@ thead, tr:nth-child(even) {
     .header {
         flex-direction: column;
         height: 300px;
+        display: none;
     }
 
     .link-two, .active {
@@ -312,5 +325,13 @@ thead, tr:nth-child(even) {
 
     .ride {
         width: 100%;
+    }
+
+    .mobile {
+        display: flex;
+    }
+
+    .link-three {
+        width: 40%;
     }
 }
