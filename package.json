@@ -1,0 +1,22 @@
+{
+  "name": "ride-my-way-app",
+  "version": "1.0.0",
+  "description": "A carpooling application",
+  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[3~\u001b[C\u001b[C\u001b[D\u001b[D\u001b[3~\u001b[3~\u001b[1;2C\u001b[1;html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elikeyz/ride-my-way-app.git"
+  },
+  "author": "Elijah Enuem-Udogu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elikeyz/ride-my-way-app/issues"
+  },
+  "homepage": "https://github.com/elikeyz/ride-my-way-app#readme",
+  "dependencies": {
+    "eslint-config-airbnb": "^17.1.0"
+  }
+}

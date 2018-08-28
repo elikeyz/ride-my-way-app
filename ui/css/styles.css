@@ -186,7 +186,8 @@ input {
     background-color: rgb(165, 42, 42);
     color: white;
     justify-content: space-around;
-    height: 80px;
+    height: 80px;    
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,.3);
 }
 
 .active {
@@ -333,5 +334,11 @@ thead, tr:nth-child(even) {
 
     .link-three {
         width: 40%;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .title-bar {
+        height: 120px;
     }
 }
