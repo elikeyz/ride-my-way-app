@@ -1,16 +1,30 @@
-fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/auth/login', {
+const usernameField = document.getElementById('username-login');
+const passwordField = document.getElementById('password-login');
+const submitBtn = document.getElementById('login');
+const feedback = document.getElementById('feedback');
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/auth/login', {
     method: 'POST',
     headers: {
-        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      'Content-type': 'application/json',
     },
-    body: {
-        username: 'elikeyz',
-        password: 'mastahacka'
-    }
-}).then(response => response.json()).then(data => {console.log(data)}).catch(err => console.log(err));
+    body: JSON.stringify({
+      username: usernameField.value,
+      password: passwordField.value,
+    }),
+  }).then((response) => {
+    return response.json();
+  }).then((data) => {
+    if (data.success) {
+      localStorage.rideMyWayToken = data.accessToken;
+      window.location = '../rides.html'
+    } else {
+      feedback.innerHTML = `<p>${data.message}</p>`
+    }    
+  }).catch((err) => {
+    feedback.innerHTML = `<p>Sorry, there was an error experienced while logging in: ${err}</p>`
+  });
+});
 
-fetch(`https://api.unsplash.com/search/photos?page=1&query=cats`, {
-            headers: {
-                Authorization: 'Client-ID 56e0b8326eac6c03b3f492dad48e3c2b0d39721c97565ae17e5f809da45f5428'
-            }
-        }).then(response => response.json()).then(data => {console.log(data)}).catch(err => console.log(err));

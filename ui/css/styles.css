@@ -156,6 +156,7 @@ a:hover {
     color: white;
     margin-top: 30px;
     font-size: large;
+    border: 1px solid rgb(165, 42, 42);
 }
 
 .action {
