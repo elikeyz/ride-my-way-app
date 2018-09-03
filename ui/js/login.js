@@ -19,7 +19,7 @@ submitBtn.addEventListener('click', (e) => {
   }).then((data) => {
     if (data.success) {
       localStorage.rideMyWayToken = data.accessToken;
-      window.location = '../rides.html'
+      window.location = '../ui/rides.html'
     } else {
       feedback.innerHTML = `<p>${data.message}</p>`
     }    
