@@ -14,17 +14,14 @@ submitBtn.addEventListener('click', (e) => {
       username: usernameField.value,
       password: passwordField.value,
     }),
-  }).then((response) => {
-    return response.json();
-  }).then((data) => {
+  }).then(response => response.json()).then((data) => {
     if (data.success) {
       localStorage.rideMyWayToken = data.accessToken;
-      window.location = '../ui/rides.html'
+      window.location = '../ui/rides.html';
     } else {
-      feedback.innerHTML = `<p>${data.message}</p>`
-    }    
+      feedback.innerHTML = `<p>${data.message}</p>`;
+    }
   }).catch((err) => {
-    feedback.innerHTML = `<p>Sorry, there was an error experienced while logging in: ${err}</p>`
+    feedback.innerHTML = `<p>Sorry, there was an error experienced while logging in: ${err}</p>`;
   });
 });
-
