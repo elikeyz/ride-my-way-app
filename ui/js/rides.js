@@ -1,3 +1,7 @@
+if (!localStorage.rideMyWayToken) {
+  window.location = '../ui/login.html';
+}
+
 const ridesContainer = document.getElementsByClassName('container')[0];
 let htmlContent = '';
 
@@ -9,7 +13,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
   },
 }).then(response => response.json()).then((data) => {
   if (data.success) {
-    for (let i = 0; i < data.body.length; i++) {
+    for (let i = 0; i < data.body.length; i += 1) {
       htmlContent = `<div class="ride">
                       <div class="ride-body">
                         <div class="ride-header">
