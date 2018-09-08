@@ -17,6 +17,10 @@ submitBtn.addEventListener('click', (e) => {
   }).then(response => response.json()).then((data) => {
     if (data.success) {
       localStorage.rideMyWayToken = data.accessToken;
+      localStorage.rideMyWayUserFirstName = data.user.firstname;
+      localStorage.rideMyWayUserLastName = data.user.lastname;
+      localStorage.rideMyWayUserUserName = data.user.username;
+      localStorage.rideMyWayUserEmail = data.user.email;
       window.location = '../ui/rides.html';
     } else {
       feedback.innerHTML = `<p>${data.message}</p>`;
