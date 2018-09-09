@@ -18,12 +18,12 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
                                   <div class="ride-header">
                                     <h3>${data.body[i].location} - ${data.body[i].destination}</h3>
                                   </div>
-                                  <p>${new Date(data.body[i].date).toDateString()}</p>
-                                  <p>${data.body[i].driver}</p>
-                                  <p>${data.body[i].location}</p>
-                                  <p>${data.body[i].destination}</p>
-                                  <p>${data.body[i].departuretime}</p>
-                                  <p>Given</p>
+                                  <p><strong>Date: </strong>${new Date(data.body[i].date).toDateString()}</p>
+                                  <p><strong>Driver: </strong>${data.body[i].driver}</p>
+                                  <p><strong>Location: </strong>${data.body[i].location}</p>
+                                  <p><strong>Destination: </strong>${data.body[i].destination}</p>
+                                  <p><strong>Departure Time: </strong>${data.body[i].departuretime}</p>
+                                  <p><strong>Status: </strong>Given</p>
                                 </div>
                               </div>`;
         container.insertAdjacentHTML('beforeend', htmlContent);
