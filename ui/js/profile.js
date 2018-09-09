@@ -16,7 +16,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
         const htmlContent = `<div class="ride">                    
                                 <div class="ride-body">
                                   <div class="ride-header">
-                                    <h3>Sample Ride</h3>
+                                    <h3>${data.body[i].location} - ${data.body[i].destination}</h3>
                                   </div>
                                   <p>${new Date(data.body[i].date).toDateString()}</p>
                                   <p>${data.body[i].driver}</p>
