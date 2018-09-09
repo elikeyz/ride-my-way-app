@@ -23,12 +23,14 @@ rideForm.addEventListener('submit', (event) => {
       departureTime: `${tripDate.getHours()}:${tripDate.getMinutes()}`,
     }),
   }).then(response => response.json()).then((data) => {
-    const feedback = `<p>${data.message}</p>`;    
+    const feedback = `<p>${data.message}</p>`;
     modal.style.display = 'block';
     modalBody.insertAdjacentHTML('afterbegin', feedback);
     modalBtn.addEventListener('click', () => {
       modal.style.display = 'none';
-      window.location = '../ui/rides.html';
+      if (data.success) {
+        window.location = '../ui/rides.html';
+      }
     });
   });
 });

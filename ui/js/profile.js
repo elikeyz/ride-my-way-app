@@ -1,4 +1,5 @@
 const userInfo = document.getElementsByClassName('user-info')[0];
+const container = document.getElementsByClassName('container')[0];
 let givenRidesCount = 0;
 
 fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
@@ -12,6 +13,20 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
     for (let i = 0; i < data.body.length; i += 1) {
       if (data.body[i].driver === localStorage.rideMyWayUserUserName) {
         givenRidesCount += 1;
+        const htmlContent = `<div class="ride">                    
+                                <div class="ride-body">
+                                  <div class="ride-header">
+                                    <h3>Sample Ride</h3>
+                                  </div>
+                                  <p>${new Date(data.body[i].date).toDateString()}</p>
+                                  <p>${data.body[i].driver}</p>
+                                  <p>${data.body[i].location}</p>
+                                  <p>${data.body[i].destination}</p>
+                                  <p>${data.body[i].departuretime}</p>
+                                  <p>Given</p>
+                                </div>
+                              </div>`;
+        container.insertAdjacentHTML('beforeend', htmlContent);
       }
     }
     const htmlContent = `<h3>${localStorage.rideMyWayUserFirstName} ${localStorage.rideMyWayUserLastName}</h3>
