@@ -1,3 +1,7 @@
+if (!localStorage.rideMyWayToken) {
+  window.location = '../ui/login.html';
+}
+
 const userInfo = document.getElementsByClassName('user-info')[0];
 const container = document.getElementsByClassName('container')[0];
 let givenRidesCount = 0;

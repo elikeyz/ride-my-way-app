@@ -1,3 +1,7 @@
+if (!localStorage.rideMyWayToken) {
+  window.location = '../ui/login.html';
+}
+
 const rideForm = document.getElementsByTagName('form')[0];
 const dateField = document.getElementById('new-date');
 const locationField = document.getElementById('new-location');

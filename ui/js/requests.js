@@ -1,3 +1,7 @@
+if (!localStorage.rideMyWayToken) {
+  window.location = '../ui/login.html';
+}
+
 const container = document.getElementsByClassName('container')[0];
 const myRides = [];
 
