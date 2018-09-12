@@ -54,7 +54,10 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
             container.insertAdjacentHTML('beforeend', htmlContent);
           }
         }
+        return request;
       });
     }
   }
+}).catch((err) => {
+  container.innerHTML = `<p>${err}</p>`;
 });

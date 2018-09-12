@@ -36,5 +36,12 @@ rideForm.addEventListener('submit', (event) => {
         window.location = '../ui/rides.html';
       }
     });
+  }).catch((err) => {
+    const feedback = `<p>${err}</p>`;
+    modal.style.display = 'block';
+    modalBody.insertAdjacentHTML('afterbegin', feedback);
+    modalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
   });
 });
