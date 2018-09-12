@@ -50,6 +50,12 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
             },
           }).then(response => response.json()).then((ride) => {
             if (ride.success) {
+              let status = '';
+              if (requests.body[j].isaccepted) {
+                status = 'Taken';
+              } else if (requests.body[j].isaccepted === null) {
+                status = 'Requested';
+              }
               const htmlContent = `<div class="ride">                    
                                 <div class="ride-body">
                                   <div class="ride-header">
@@ -60,7 +66,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
                                   <p><strong>Location: </strong>${ride.body.location}</p>
                                   <p><strong>Destination: </strong>${ride.body.destination}</p>
                                   <p><strong>Departure Time: </strong>${ride.body.departuretime}</p>
-                                  <p><strong>Status: </strong>Taken</p>
+                                  <p><strong>Status: </strong>${status}</p>
                                 </div>
                               </div>`;
               container.insertAdjacentHTML('beforeend', htmlContent);

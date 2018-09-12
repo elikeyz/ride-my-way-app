@@ -6,6 +6,7 @@ const ridesContainer = document.getElementsByClassName('container')[0];
 const modal = document.getElementById('myModal');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 const myRequests = [];
+const requestStatus = [];
 
 fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
   method: 'GET',
@@ -17,6 +18,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
   if (requests.success) {
     for (let i = 0; i < requests.body.length; i += 1) {
       myRequests.push(requests.body[i].rideid);
+      requestStatus.push(requests.body[i].isaccepted);
     }
   }
   return myRequests;
@@ -32,36 +34,21 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
       for (let i = 0; i < data.body.length; i += 1) {
         if (new Date(data.body[i].date) >= new Date()) {
           let htmlContent = '';
+          let subContent = '';
           if (data.body[i].driver === localStorage.rideMyWayUserUserName) {
-            htmlContent = `<div class="ride">
-        <div class="ride-body">
-          <div class="ride-header">
-              <h3>${data.body[i].location} - ${data.body[i].destination}</h3>
-          </div>
-          <p><strong>Date: </strong>${new Date(data.body[i].date).toDateString()}</p>
-          <p><strong>Driver: </strong>${data.body[i].driver}</p>
-          <p><strong>Location: </strong>${data.body[i].location}</p>
-          <p><strong>Destination: </strong>${data.body[i].destination}</p>
-          <p><strong>Departure Time: </strong>${data.body[i].departuretime}</p>
-          <p><strong>Status: </strong>Given</p>
-          </div></div>`;
-            ridesContainer.insertAdjacentHTML('beforeend', htmlContent);
+            subContent = '<p><strong>Status: </strong>Given</p>';
           } else if (requests.indexOf(data.body[i].id) >= 0) {
-            htmlContent = `<div class="ride">
-          <div class="ride-body">
-            <div class="ride-header">
-                <h3>${data.body[i].location} - ${data.body[i].destination}</h3>
-            </div>
-            <p><strong>Date: </strong>${new Date(data.body[i].date).toDateString()}</p>
-            <p><strong>Driver: </strong>${data.body[i].driver}</p>
-            <p><strong>Location: </strong>${data.body[i].location}</p>
-            <p><strong>Destination: </strong>${data.body[i].destination}</p>
-            <p><strong>Departure Time: </strong>${data.body[i].departuretime}</p>
-            <p><strong>Status: </strong>Taken</p>
-            </div></div>`;
-            ridesContainer.insertAdjacentHTML('beforeend', htmlContent);
+            let status = '';
+            if (requestStatus[requests.indexOf(data.body[i].id)]) {
+              status = 'Taken';
+            } else if (requestStatus[requests.indexOf(data.body[i].id)] === null) {
+              status = 'Requested';
+            }
+            subContent = `<p><strong>Status: </strong>${status}</p>`;
           } else {
-            htmlContent = `<div class="ride">
+            subContent = `<button id="request-ride${data.body[i].id}" class="submit request">Request Ride</button>`;
+          }
+          htmlContent = `<div class="ride">
           <div class="ride-body">
             <div class="ride-header">
                 <h3>${data.body[i].location} - ${data.body[i].destination}</h3>
@@ -71,10 +58,9 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
             <p><strong>Location: </strong>${data.body[i].location}</p>
             <p><strong>Destination: </strong>${data.body[i].destination}</p>
             <p><strong>Departure Time: </strong>${data.body[i].departuretime}</p>
-            <button id="request-ride${data.body[i].id}" class="submit request">Request Ride</button>
+            ${subContent}
             </div></div>`;
-            ridesContainer.insertAdjacentHTML('beforeend', htmlContent);
-          }
+          ridesContainer.insertAdjacentHTML('beforeend', htmlContent);
         }
       }
     } else {
@@ -94,32 +80,27 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
                 token: localStorage.rideMyWayToken,
               },
             }).then(response => response.json()).then((request) => {
+              let feedback = '';
               if (request.success) {
-                const feedback = `<p>
+                feedback = `<p>
                                 ${rideCopy.location} - ${rideCopy.destination}<br>
                                 ${new Date(rideCopy.date)}<br>
                                 ${rideCopy.departuretime}<br>
                                 ${request.message}<br>
                                 <button class="submit modal-btn">Ok</button>
                               </p>`;
-                modal.style.display = 'block';
-                modalBody.innerHTML = feedback;
-                const modalBtn = document.getElementsByClassName('modal-btn')[0];
-                modalBtn.addEventListener('click', () => {
-                  modal.style.display = 'none';
-                });
               } else {
-                const feedback = `<p>
+                feedback = `<p>
                                 ${request.message}<br>
                                 <button class="submit modal-btn">Ok</button>
                               </p>`;
-                modal.style.display = 'block';
-                modalBody.innerHTML = feedback;
-                const modalBtn = document.getElementsByClassName('modal-btn')[0];
-                modalBtn.addEventListener('click', () => {
-                  modal.style.display = 'none';
-                });
               }
+              modal.style.display = 'block';
+              modalBody.innerHTML = feedback;
+              const modalBtn = document.getElementsByClassName('modal-btn')[0];
+              modalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+              });
             });
           })(data.body[i]));
         }
