@@ -80,22 +80,17 @@ nav {
 .link-two {
     color: white;
     text-decoration-line: none;
+    -moz-text-decoration-line: none;    
     width: 20%;
 }
 
 .link-three {
     color: white;
     text-decoration-line: none;
+    -moz-text-decoration-line: none;
 }
-
-.link-four {
-    color: white;
-    text-decoration-line: none;
-}
-
 
 a:hover {
-    text-decoration-line: none;
     cursor: pointer;
 }
 
