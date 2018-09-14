@@ -261,9 +261,38 @@ input {
 }
 
 #feedback {
-    background-color: rgb(199, 196, 196);
+    background-color: rgb(201, 17, 17, .2);
 }
 
+.given {
+    color: rgb(56, 111, 212);
+}
+
+.requested {
+    color: rgb(214, 148, 6);
+}
+
+.taken {
+    color: rgb(10, 92, 10);
+}
+
+.rejected {
+    color: rgb(160, 11, 11);
+}
+
+.expired {
+    color: rgb(73, 71, 71);
+}
+
+.accept {
+    background-color: rgb(10, 92, 10);
+    border: 1px solid rgb(10, 92, 10);
+}
+
+.reject {
+    background-color: rgb(160, 11, 11);
+    border: 1px solid rgb(160, 11, 11);
+}
 
 .modal {
     display: none; /* Hidden by default */

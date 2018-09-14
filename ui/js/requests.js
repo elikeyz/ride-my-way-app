@@ -32,13 +32,13 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
           for (let k = 0; k < requests.body.length; k += 1) {
             let subContent = '';
             if (new Date(myRides[j].date) <= new Date()) {
-              subContent = '<p><em>Expired</em></p>';
+              subContent = '<p class="expired"><em>Expired</em></p>';
             } else if (requests.body[k].isaccepted) {
-              subContent = `<p><em>Accepted</em></p> <button id="reject-req${requests.body[k].id}" class="submit action">Reject</button>`;
+              subContent = `<p class="taken"><em>Accepted</em></p> <button id="reject-req${requests.body[k].id}" class="reject submit action">Reject</button>`;
             } else if (requests.body[k].isaccepted === false) {
-              subContent = `<button id="accept-req${requests.body[k].id}" class="submit action">Accept</button> <p><em>Rejected</em></p>`;
+              subContent = `<button id="accept-req${requests.body[k].id}" class="accept submit action">Accept</button> <p class="rejected"><em>Rejected</em></p>`;
             } else if (requests.body[k].isaccepted === null) {
-              subContent = `<button id="accept-req${requests.body[k].id}" class="submit action">Accept</button><button id="reject-req${requests.body[k].id}" class="submit action">Reject</button>`;
+              subContent = `<button id="accept-req${requests.body[k].id}" class="accept submit action">Accept</button><button id="reject-req${requests.body[k].id}" class="reject submit action">Reject</button>`;
             }
             const htmlContent = `<div class="ride">            
                                  <div class="ride-body">

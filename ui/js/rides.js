@@ -36,15 +36,15 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
           let htmlContent = '';
           let subContent = '';
           if (data.body[i].driver === localStorage.rideMyWayUserUserName) {
-            subContent = '<p><strong>Status: </strong>Given</p>';
+            subContent = '<p class="given"><strong>Status: </strong>Given</p>';
           } else if (requests.indexOf(data.body[i].id) >= 0) {
-            let status = '';
             if (requestStatus[requests.indexOf(data.body[i].id)]) {
-              status = 'Taken';
+              subContent = '<p class="taken"><strong>Status: </strong>Taken</p>';
             } else if (requestStatus[requests.indexOf(data.body[i].id)] === null) {
-              status = 'Requested';
+              subContent = '<p class="requested"><strong>Status: </strong>Requested</p>';
+            } else if (requestStatus[requests.indexOf(data.body[i].id)] === false) {
+              subContent = `<button id="request-ride${data.body[i].id}" class="submit request">Request Ride</button>`;
             }
-            subContent = `<p><strong>Status: </strong>${status}</p>`;
           } else {
             subContent = `<button id="request-ride${data.body[i].id}" class="submit request">Request Ride</button>`;
           }

@@ -27,7 +27,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
                                   <p><strong>Location: </strong>${data.body[i].location}</p>
                                   <p><strong>Destination: </strong>${data.body[i].destination}</p>
                                   <p><strong>Departure Time: </strong>${data.body[i].departuretime}</p>
-                                  <p><strong>Status: </strong>Given</p>
+                                  <p class="given"><strong>Status: </strong>Given</p>
                                 </div>
                               </div>`;
         container.insertAdjacentHTML('beforeend', htmlContent);
@@ -52,9 +52,9 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
             if (ride.success) {
               let status = '';
               if (requests.body[j].isaccepted) {
-                status = 'Taken';
+                status = '<p class="taken"><strong>Status: </strong>Taken</p>';
               } else if (requests.body[j].isaccepted === null) {
-                status = 'Requested';
+                status = '<p class="requested"><strong>Status: </strong>Requested</p>';
               }
               const htmlContent = `<div class="ride">                    
                                 <div class="ride-body">
@@ -66,7 +66,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
                                   <p><strong>Location: </strong>${ride.body.location}</p>
                                   <p><strong>Destination: </strong>${ride.body.destination}</p>
                                   <p><strong>Departure Time: </strong>${ride.body.departuretime}</p>
-                                  <p><strong>Status: </strong>${status}</p>
+                                  ${status}
                                 </div>
                               </div>`;
               container.insertAdjacentHTML('beforeend', htmlContent);
