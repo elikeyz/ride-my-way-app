@@ -75,7 +75,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
         }
         const htmlContent = `<h3>${localStorage.rideMyWayUserFirstName} ${localStorage.rideMyWayUserLastName}</h3>
                     <h4>${localStorage.rideMyWayUserEmail}</h4>
-                    <h4>${localStorage.rideMyWayUserUserName}</h4>
+                    <h4>@${localStorage.rideMyWayUserUserName}</h4>
                     <h4>Number of Rides Given: ${givenRidesCount}</h4>
                     <h4>Number of Rides Taken: ${requests.body.length}</h4>`;
 

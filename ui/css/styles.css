@@ -99,6 +99,7 @@ a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 130px 10%;
+    color: rgb(165, 42, 42);
 }
 
 .ride {

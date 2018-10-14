@@ -8,6 +8,8 @@ const modalBody = document.getElementsByClassName('modal-body')[0];
 const myRequests = [];
 const requestStatus = [];
 
+ridesContainer.innerHTML = '<p>Loading...</p>';
+
 fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
   method: 'GET',
   headers: {
@@ -31,6 +33,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/users/requests', {
     },
   }).then(response => response.json()).then((data) => {
     if (data.success) {
+      ridesContainer.innerHTML = '';
       for (let i = 0; i < data.body.length; i += 1) {
         if (new Date(data.body[i].date) >= new Date()) {
           let htmlContent = '';

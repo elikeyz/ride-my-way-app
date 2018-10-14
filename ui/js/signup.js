@@ -8,6 +8,7 @@ const submitBtn = document.getElementById('signup');
 const feedback = document.getElementById('feedback');
 
 submitBtn.addEventListener('click', (e) => {
+  feedback.innerHTML = '<p>Signing you up</p>';
   e.preventDefault();
   if (passwordField.value !== confirmPasswordField.value) {
     feedback.innerHTML = '<p>Please confirm your password</p>';

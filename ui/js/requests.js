@@ -7,6 +7,8 @@ const modal = document.getElementById('myModal');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 const myRides = [];
 
+container.innerHTML = '<p>Loading...</p>';
+
 fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
   method: 'GET',
   headers: {
@@ -15,6 +17,7 @@ fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/rides', {
   },
 }).then(response => response.json()).then((data) => {
   if (data.success) {
+    container.innerHTML = '';
     for (let i = 0; i < data.body.length; i += 1) {
       if (data.body[i].driver === localStorage.rideMyWayUserUserName) {
         myRides.push(data.body[i]);

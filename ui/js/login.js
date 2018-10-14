@@ -5,6 +5,7 @@ const feedback = document.getElementById('feedback');
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  feedback.innerHTML = '<p>Logging in...</p>';
   fetch('https://shrouded-plains-80012.herokuapp.com/api/v1/auth/login', {
     method: 'POST',
     headers: {
