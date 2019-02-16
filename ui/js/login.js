@@ -3,6 +3,21 @@ const passwordField = document.getElementById('password-login');
 const submitBtn = document.getElementById('login');
 const feedback = document.getElementById('feedback');
 
+const login = (data) => {
+  if (data.success) {
+    localStorage.rideMyWayToken = data.accessToken;
+    localStorage.rideMyWayUser = JSON.stringify({
+      firstname: data.user.firstname,
+      lastname: data.user.lastname,
+      email: data.user.email,
+      username: data.user.username,
+    });
+    window.location = '../ui/rides.html';
+  } else {
+    feedback.innerHTML = `<p>${data.message}</p>`;
+  }
+};
+
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   feedback.innerHTML = '<p>Logging in...</p>';
@@ -15,18 +30,10 @@ submitBtn.addEventListener('click', (e) => {
       username: usernameField.value,
       password: passwordField.value,
     }),
-  }).then(response => response.json()).then((data) => {
-    if (data.success) {
-      localStorage.rideMyWayToken = data.accessToken;
-      localStorage.rideMyWayUserFirstName = data.user.firstname;
-      localStorage.rideMyWayUserLastName = data.user.lastname;
-      localStorage.rideMyWayUserUserName = data.user.username;
-      localStorage.rideMyWayUserEmail = data.user.email;
-      window.location = '../ui/rides.html';
-    } else {
-      feedback.innerHTML = `<p>${data.message}</p>`;
-    }
-  }).catch((err) => {
-    feedback.innerHTML = `<p>Sorry, there was an error experienced while logging in: ${err}</p>`;
-  });
+  })
+    .then(response => response.json())
+    .then(login)
+    .catch((err) => {
+      feedback.innerHTML = `<p>Sorry, there was an error experienced while logging in: ${err}</p>`;
+    });
 });

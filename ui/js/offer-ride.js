@@ -11,6 +11,27 @@ const modal = document.getElementById('myModal');
 const modalBody = document.getElementsByClassName('modal-body')[0];
 const modalBtn = document.getElementsByClassName('modal-btn')[0];
 
+const rideOfferSuccess = (data) => {
+  const feedback = `<p>${data.message}</p>`;
+  modal.style.display = 'block';
+  modalBody.insertAdjacentHTML('afterbegin', feedback);
+  modalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    if (data.success) {
+      window.location = '../ui/rides.html';
+    }
+  });
+};
+
+const rideOfferFail = (err) => {
+  const feedback = `<p>${err}</p>`;
+  modal.style.display = 'block';
+  modalBody.insertAdjacentHTML('afterbegin', feedback);
+  modalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+};
+
 rideForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const tripDate = new Date(`${dateField.value} ${timeField.value}`);
@@ -26,22 +47,8 @@ rideForm.addEventListener('submit', (event) => {
       destination: destinationField.value,
       departureTime: `${tripDate.getHours()}:${tripDate.getMinutes()}`,
     }),
-  }).then(response => response.json()).then((data) => {
-    const feedback = `<p>${data.message}</p>`;
-    modal.style.display = 'block';
-    modalBody.insertAdjacentHTML('afterbegin', feedback);
-    modalBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-      if (data.success) {
-        window.location = '../ui/rides.html';
-      }
-    });
-  }).catch((err) => {
-    const feedback = `<p>${err}</p>`;
-    modal.style.display = 'block';
-    modalBody.insertAdjacentHTML('afterbegin', feedback);
-    modalBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-  });
+  })
+    .then(response => response.json())
+    .then(rideOfferSuccess)
+    .catch(rideOfferFail);
 });

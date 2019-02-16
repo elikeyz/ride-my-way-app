@@ -1,10 +1,7 @@
 const logoutBtn = document.getElementById('logout');
 
 logoutBtn.addEventListener('click', () => {
-  localStorage.rideMyWayToken = '';
-  localStorage.rideMyWayUserFirstName = '';
-  localStorage.rideMyWayUserLastName = '';
-  localStorage.rideMyWayUserUserName = '';
-  localStorage.rideMyWayUserEmail = '';
+  localStorage.removeItem('rideMyWayToken');
+  localStorage.removeItem('rideMyWayUser');
   window.location = '../ui/index.html';
 });

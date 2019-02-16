@@ -7,6 +7,16 @@ const confirmPasswordField = document.getElementById('password-confirm-signup');
 const submitBtn = document.getElementById('signup');
 const feedback = document.getElementById('feedback');
 
+const signup = (data) => {
+  if (data.success) {
+    localStorage.rideMyWayToken = data.accessToken;
+    localStorage.rideMyWayUser = JSON.stringify(data.user);
+    window.location = '../ui/rides.html';
+  } else {
+    feedback.innerHTML = `<p>${data.message}</p>`;
+  }
+};
+
 submitBtn.addEventListener('click', (e) => {
   feedback.innerHTML = '<p>Signing you up</p>';
   e.preventDefault();
@@ -25,15 +35,11 @@ submitBtn.addEventListener('click', (e) => {
         username: usernameField.value,
         password: passwordField.value,
       }),
-    }).then(response => response.json()).then((data) => {
-      if (data.success) {
-        localStorage.rideMyWayToken = data.accessToken;
-        window.location = '../ui/rides.html';
-      } else {
-        feedback.innerHTML = `<p>${data.message}</p>`;
-      }
-    }).catch((err) => {
-      feedback.innerHTML = `<p>Sorry, there was an error experienced while signing up: ${err}</p>`;
-    });
+    })
+      .then(response => response.json())
+      .then(signup)
+      .catch((err) => {
+        feedback.innerHTML = `<p>Sorry, there was an error experienced while signing up: ${err}</p>`;
+      });
   }
 });
